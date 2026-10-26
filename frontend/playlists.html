@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apni Dhun | Playlists</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="playlists.js" defer></script>
+</head>
+<body class="page-playlists">
+  <aside class="sidebar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">♫</span>
+      Apni Dhun
+    </a>
+
+    <p class="menu-title">MENU</p>
+    <nav>
+      <a class="nav-link" href="index.html">⌂ &nbsp; Home</a>
+      <a class="nav-link" href="explore.html">⌕ &nbsp; Explore</a>
+      <a class="nav-link" href="favorites.html">♡ &nbsp; Favourites</a>
+      <a class="nav-link" href="discover.html">✦ &nbsp; Discover</a>
+      <a class="nav-link active" href="playlists.html">☰ &nbsp; Playlists</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <span>♪</span>
+      <p>Collections for every chapter.</p>
+    </div>
+  </aside>
+
+  <main class="main-content playlists-page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PLAYLISTS</p>
+        <h1>Collections with a story.</h1>
+        <p class="subtitle">Handpicked tracks for the moments you want to remember.</p>
+      </div>
+      <div class="header-tools">
+        <span class="status-pill">Curated</span>
+        <div class="profile"><span>☰</span></div>
+      </div>
+    </header>
+
+    <section class="playlist-showcase">
+      <article class="playlist-tile tile-large">
+        <span class="mini-tag">Soulful Shuffle</span>
+        <h2>Late Night Feelings</h2>
+        <p>Warm, intimate tracks for quiet evenings and reflective hours.</p>
+      </article>
+
+      <article class="playlist-tile tile-small">
+        <span class="mini-tag">Sunrise</span>
+        <h3>Golden Openers</h3>
+      </article>
+
+      <article class="playlist-tile tile-small">
+        <span class="mini-tag">Mood Boost</span>
+        <h3>Good Vibes</h3>
+      </article>
+    </section>
+
+    <section class="visual-gallery playlist-gallery">
+      <div class="gallery-feature gradient-thirteen">
+        <span>Quiet Glow</span>
+      </div>
+      <div class="gallery-stack">
+        <div class="mini-visual gradient-fourteen"><span>Golden Openers</span></div>
+        <div class="mini-visual gradient-fifteen"><span>Slow Flow</span></div>
+      </div>
+    </section>
+
+    <section class="playlist-manager" aria-labelledby="playlist-manager-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="playlist-manager-title">Your playlists</h2>
+          <p class="section-subtitle">Make a collection for every mood.</p>
+        </div>
+      </div>
+
+      <form class="playlist-create-form" id="playlist-form">
+        <label class="playlist-field">
+          <span>Playlist name</span>
+          <input name="name" maxlength="80" placeholder="e.g. Slow Sundays" required>
+        </label>
+        <label class="playlist-field">
+          <span>Description <small>(optional)</small></span>
+          <input name="description" maxlength="240" placeholder="What does this playlist sound like?">
+        </label>
+        <button class="primary-btn" type="submit">Create playlist</button>
+      </form>
+      <p class="playlist-status" id="playlist-status" role="status" aria-live="polite"></p>
+      <div class="playlist-manager-grid" id="playlist-manager-grid"></div>
+    </section>
+  </main>
+</body>
+</html>

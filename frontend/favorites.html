@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apni Dhun | Favourites</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="favorites.js" defer></script>
+</head>
+<body class="page-favorites">
+  <aside class="sidebar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">♫</span>
+      Apni Dhun
+    </a>
+
+    <p class="menu-title">MENU</p>
+    <nav>
+      <a class="nav-link" href="index.html">⌂ &nbsp; Home</a>
+      <a class="nav-link" href="explore.html">⌕ &nbsp; Explore</a>
+      <a class="nav-link active" href="favorites.html">♡ &nbsp; Favourites</a>
+      <a class="nav-link" href="discover.html">✦ &nbsp; Discover</a>
+      <a class="nav-link" href="playlists.html">☰ &nbsp; Playlists</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <span>♪</span>
+      <p>Your favorite sound stories.</p>
+    </div>
+  </aside>
+
+  <main class="main-content favorites-page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">FAVOURITES</p>
+        <h1>Your comfort mix.</h1>
+        <p class="subtitle">The songs that always make you pause, smile, and replay.</p>
+      </div>
+      <div class="header-tools">
+        <span class="status-pill">Saved</span>
+        <div class="profile"><span>♥</span></div>
+      </div>
+    </header>
+
+    <section class="favorites-hero">
+      <div>
+        <span class="featured-label">YOUR KEEPERS</span>
+        <h2>All the songs you never stop loving.</h2>
+      </div>
+      <button class="primary-btn">Play All</button>
+    </section>
+
+    <section class="visual-gallery favorites-gallery">
+      <div class="gallery-feature gradient-seven">
+        <span>Love Notes</span>
+      </div>
+      <div class="gallery-stack">
+        <div class="mini-visual gradient-eight"><span>Replay</span></div>
+        <div class="mini-visual gradient-nine"><span>Comfort Mix</span></div>
+      </div>
+    </section>
+
+    <section class="stat-grid">
+      <article class="stat-box">
+        <span>Saved tracks</span>
+        <strong>4</strong>
+      </article>
+      <article class="stat-box">
+        <span>Most played</span>
+        <strong>Golden Hour</strong>
+      </article>
+      <article class="stat-box">
+        <span>Current mood</span>
+        <strong>Late-night glow</strong>
+      </article>
+    </section>
+
+    <section class="favorites-table" aria-label="Liked songs">
+      <div class="favorites-columns" aria-hidden="true">
+        <span>#</span>
+        <span>Title</span>
+        <span>Album</span>
+        <span>Date added</span>
+        <span>Time</span>
+      </div>
+      <div class="favorites-list" id="favorites-list"></div>
+      <p class="favorites-status" id="favorites-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</body>
+</html>

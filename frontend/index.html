@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apni Dhun | Your Music, Your Mood</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-glow glow-one" aria-hidden="true"></div>
+  <div class="page-glow glow-two" aria-hidden="true"></div>
+
+  <aside class="sidebar">
+    <a href="#" class="logo">
+      <span class="logo-icon">♫</span>
+      Apni Dhun
+    </a>
+
+    <p class="menu-title">MENU</p>
+    <nav>
+      <a href="index.html" class="nav-link active" data-page="home">⌂ &nbsp; Home</a>
+      <a href="explore.html" class="nav-link" data-page="explore">⌕ &nbsp; Explore</a>
+      <a href="favorites.html" class="nav-link" data-page="favorites">♡ &nbsp; Favourites</a>
+      <a href="discover.html" class="nav-link" data-page="discover">✦ &nbsp; Discover</a>
+      <a href="playlists.html" class="nav-link" data-page="playlists">☰ &nbsp; Playlists</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <span>♪</span>
+      <p>Your music, your mood.</p>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL MUSIC SPACE</p>
+        <h1 id="page-title">Find Your Dhun.</h1>
+        <p class="subtitle" id="page-subtitle">
+          Discover the music that feels like you.
+        </p>
+      </div>
+
+      <div class="header-tools">
+        <span class="status-pill">Live Mix</span>
+        <a class="profile profile-link" href="login.html" aria-label="Sign in to Apni Dhun">A</a>
+      </div>
+    </header>
+
+    <section class="search-section">
+      <label class="search-box">
+        <span>⌕</span>
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search songs or artists..."
+          aria-label="Search songs or artists"
+        >
+      </label>
+    </section>
+
+    <section class="genres">
+      <button class="genre-btn active" data-genre="All">All Songs</button>
+      <button class="genre-btn" data-genre="Bollywood">Bollywood</button>
+      <button class="genre-btn" data-genre="Pop">Pop</button>
+      <button class="genre-btn" data-genre="Romantic">Romantic</button>
+      <button class="genre-btn" data-genre="Chill">Chill</button>
+      <button class="genre-btn" data-genre="Hip-Hop">Hip-Hop</button>
+    </section>
+
+    <section class="featured">
+      <div class="featured-text">
+        <span class="featured-label">YOUR DAILY SOUNDTRACK</span>
+        <h2>Feel every<br>beat.</h2>
+        <p>Good music. Good mood. Every day.</p>
+        <button id="featured-play" class="primary-btn">
+          ▶ &nbsp; Play Music
+        </button>
+      </div>
+      <div class="featured-art" aria-hidden="true">
+        <div class="art-circle circle-one"></div>
+        <div class="art-circle circle-two"></div>
+        <div class="art-note">♫</div>
+      </div>
+    </section>
+
+    <section class="page-panel" id="page-panel" aria-live="polite"></section>
+
+    <section class="feature-tiles" aria-label="Featured music moods">
+      <article class="feature-tile tile-purple">
+        <span class="tile-label">Night Push</span>
+        <strong>After dark</strong>
+      </article>
+      <article class="feature-tile tile-pink">
+        <span class="tile-label">Slow Burn</span>
+        <strong>Easy remix</strong>
+      </article>
+      <article class="feature-tile tile-gold">
+        <span class="tile-label">Golden Hour</span>
+        <strong>Runner-up</strong>
+      </article>
+    </section>
+
+    <section class="songs-section">
+      <div class="section-heading">
+        <div>
+          <h2 id="songs-heading">Made for Your Mood</h2>
+          <p class="section-subtitle">A little music goes a long way.</p>
+        </div>
+        <span id="song-count"></span>
+      </div>
+
+      <div class="song-grid" id="song-grid"></div>
+    </section>
+  </main>
+
+  <footer class="player">
+    <div class="now-playing">
+      <img
+        id="player-cover"
+        src="https://placehold.co/100x100/302044/ffffff?text=♫"
+        alt="Current song cover"
+      >
+      <div class="track-info">
+        <strong id="player-title">Choose a song</strong>
+        <span id="player-artist">Your next favourite awaits</span>
+      </div>
+      <button id="player-favorite" class="player-heart" aria-label="Toggle favourite">♡</button>
+    </div>
+
+    <div class="player-center">
+      <div class="player-controls">
+        <button id="prev-btn" aria-label="Previous song">|◀</button>
+        <button id="play-btn" class="play-btn" aria-label="Play">▶</button>
+        <button id="next-btn" aria-label="Next song">▶|</button>
+      </div>
+
+      <div class="progress-row">
+        <span id="current-time">0:00</span>
+        <input
+          type="range"
+          id="progress-bar"
+          min="0"
+          max="100"
+          value="0"
+          aria-label="Song progress"
+        >
+        <span id="duration">0:00</span>
+      </div>
+      <p id="player-message" class="player-message" role="status"></p>
+    </div>
+
+    <div class="volume-control">
+      <span>♫</span>
+      <input
+        type="range"
+        id="volume-bar"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.7"
+        aria-label="Volume"
+      >
+    </div>
+  </footer>
+
+  <audio id="audio-player" preload="metadata"></audio>
+
+</body>
+</html>

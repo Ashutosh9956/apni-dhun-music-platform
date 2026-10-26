@@ -1,0 +1,16 @@
+{
+  "name": "apni-dhun",
+  "version": "1.0.0",
+  "description": "Apni Dhun - Your Music, Your Mood",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
+  "keywords": [
+    "music",
+    "express",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC"
+}

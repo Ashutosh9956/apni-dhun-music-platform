@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d0b16">
+  <title>Sign in | Apni Dhun</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="login.js" defer></script>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-story" aria-label="Welcome to Apni Dhun">
+      <a href="index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">♫</span>
+        Apni Dhun
+      </a>
+
+      <div class="login-story-copy">
+        <span class="featured-label">YOUR MUSIC, YOUR MOOD</span>
+        <h1>Every feeling<br>has a <span>soundtrack.</span></h1>
+        <p>Sign in and pick up right where your music takes you.</p>
+      </div>
+
+      <div class="login-art" aria-hidden="true">
+        <div class="login-art-ring ring-one"></div>
+        <div class="login-art-ring ring-two"></div>
+        <div class="login-art-disc"><span>♫</span></div>
+        <div class="login-art-spark spark-one">✦</div>
+        <div class="login-art-spark spark-two">✧</div>
+      </div>
+
+      <p class="login-story-foot">A little music goes a long way.</p>
+    </section>
+
+    <section class="login-form-side">
+      <a class="login-home-link" href="index.html">← <span>Back to home</span></a>
+
+      <div class="login-card">
+        <div class="login-card-heading">
+          <span class="login-mobile-mark" aria-hidden="true">♫</span>
+          <p class="eyebrow">WELCOME BACK</p>
+          <h2>Sign in</h2>
+          <p class="login-description">Your next favourite song is waiting.</p>
+        </div>
+
+        <form id="login-form">
+          <label class="login-label" for="login-email">Email address</label>
+          <input
+            class="login-input"
+            id="login-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          >
+
+          <div class="login-password-heading">
+            <label class="login-label" for="login-password">Password</label>
+            <button class="login-text-button" type="button" id="forgot-password">Forgot password?</button>
+          </div>
+          <div class="login-password-field">
+            <input
+              class="login-input"
+              id="login-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Enter your password"
+              required
+            >
+            <button
+              class="password-toggle"
+              type="button"
+              id="password-toggle"
+              aria-label="Show password"
+              aria-pressed="false"
+            >Show</button>
+          </div>
+
+          <label class="remember-option">
+            <input type="checkbox" name="remember">
+            <span>Remember me</span>
+          </label>
+
+          <button class="login-submit" type="submit">Sign in <span aria-hidden="true">→</span></button>
+          <p class="login-status" id="login-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="login-divider"><span>MADE FOR YOUR MOOD</span></div>
+        <p class="login-signup">New to Apni Dhun? <a href="signup.html">Create an account</a><span class="login-guest-link"> or <a href="index.html">explore as a guest</a></span></p>
+      </div>
+
+      <p class="login-legal">By continuing, you agree to keep the music playing.</p>
+    </section>
+  </main>
+</body>
+</html>

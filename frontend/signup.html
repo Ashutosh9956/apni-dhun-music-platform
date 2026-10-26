@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d0b16">
+  <title>Create an account | Apni Dhun</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="signup.js" defer></script>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-story" aria-label="Welcome to Apni Dhun">
+      <a href="index.html" class="logo">
+        <span class="logo-icon" aria-hidden="true">♫</span>
+        Apni Dhun
+      </a>
+
+      <div class="login-story-copy">
+        <span class="featured-label">FIND YOUR SOUND</span>
+        <h1>Your next<br><span>favourite</span> starts here.</h1>
+        <p>Build a music space that moves with you, one song at a time.</p>
+      </div>
+
+      <div class="login-art" aria-hidden="true">
+        <div class="login-art-ring ring-one"></div>
+        <div class="login-art-ring ring-two"></div>
+        <div class="login-art-disc"><span>♫</span></div>
+        <div class="login-art-spark spark-one">✦</div>
+        <div class="login-art-spark spark-two">✧</div>
+      </div>
+
+      <p class="login-story-foot">A little music goes a long way.</p>
+    </section>
+
+    <section class="login-form-side">
+      <a class="login-home-link" href="index.html">← <span>Back to home</span></a>
+
+      <div class="login-card">
+        <div class="login-card-heading">
+          <span class="login-mobile-mark" aria-hidden="true">♫</span>
+          <p class="eyebrow">JOIN THE RHYTHM</p>
+          <h2>Create account</h2>
+          <p class="login-description">A little music goes a long way.</p>
+        </div>
+
+        <form id="signup-form">
+          <label class="login-label" for="signup-name">Your name</label>
+          <input
+            class="login-input signup-name-input"
+            id="signup-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            placeholder="What should we call you?"
+            required
+          >
+
+          <label class="login-label" for="signup-email">Email address</label>
+          <input
+            class="login-input signup-email-input"
+            id="signup-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com"
+            required
+          >
+
+          <label class="login-label" for="signup-password">Create a password</label>
+          <div class="login-password-field signup-password-field">
+            <input
+              class="login-input"
+              id="signup-password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              minlength="8"
+              placeholder="At least 8 characters"
+              required
+            >
+            <button
+              class="password-toggle"
+              type="button"
+              data-password-toggle="signup-password"
+              aria-label="Show password"
+              aria-pressed="false"
+            >Show</button>
+          </div>
+
+          <label class="login-label signup-confirm-label" for="signup-confirm-password">Confirm password</label>
+          <div class="login-password-field signup-password-field">
+            <input
+              class="login-input"
+              id="signup-confirm-password"
+              name="confirm-password"
+              type="password"
+              autocomplete="new-password"
+              placeholder="Enter your password again"
+              required
+            >
+            <button
+              class="password-toggle"
+              type="button"
+              data-password-toggle="signup-confirm-password"
+              aria-label="Show confirm password"
+              aria-pressed="false"
+            >Show</button>
+          </div>
+
+          <button class="login-submit signup-submit" type="submit">Create account <span aria-hidden="true">→</span></button>
+          <p class="login-status" id="signup-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="login-divider"><span>MADE FOR YOUR MOOD</span></div>
+        <p class="login-signup">Already have an account? <a href="login.html">Sign in</a></p>
+      </div>
+
+      <p class="login-legal">By continuing, you agree to keep the music playing.</p>
+    </section>
+  </main>
+</body>
+</html>
