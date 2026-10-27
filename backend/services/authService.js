@@ -6,6 +6,12 @@ const { getDBStatus } = require('../config/db');
 // In-memory fallback storage if MongoDB is offline
 const memoryUsers = [];
 
+// Shared default user configuration prototype
+const DEFAULT_USER_SETTINGS = {
+  favorites: [],
+  theme: 'dark'
+};
+
 const isMongoActive = () => getDBStatus().isConnected;
 
 const findUserByEmail = async (email) => {
@@ -38,10 +44,12 @@ const registerUser = async ({ name, email, password }) => {
   }
 
   if (isMongoActive()) {
+    const salt = await bcrypt.genSalt(10);
+    const preHashedPassword = await bcrypt.hash(password, salt);
     const user = new User({
       name: name.trim(),
       email: normalizedEmail,
-      password
+      password: preHashedPassword
     });
     await user.save();
     return user;
@@ -56,7 +64,7 @@ const registerUser = async ({ name, email, password }) => {
     name: name.trim(),
     email: normalizedEmail,
     password: hashedPassword,
-    favorites: [],
+    favorites: DEFAULT_USER_SETTINGS.favorites,
     resetPasswordToken: null,
     resetPasswordExpires: null,
     createdAt: new Date(),
@@ -103,7 +111,7 @@ const requestPasswordReset = async (email) => {
   }
 
   const resetToken = crypto.randomBytes(20).toString('hex');
-  const resetExpires = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+  const resetExpires = new Date(Date.now() + 60 * 60 * 1000).toISOString(); // 1 hour ISO timestamp
 
   user.resetPasswordToken = resetToken;
   user.resetPasswordExpires = resetExpires;

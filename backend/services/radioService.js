@@ -33,7 +33,7 @@ const getStationNowPlaying = async (stationId) => {
     station = initialStations[0]; // Fallback to sunset-fm
   }
 
-  const songMap = new Map(allSongs.map(s => [s.id, s]));
+  const songMap = new Map(allSongs.map(s => [String(s.id), s]));
   const stationSongs = (station.songIds || [])
     .map(id => songMap.get(id))
     .filter(Boolean);

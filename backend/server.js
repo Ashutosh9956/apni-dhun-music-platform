@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const dotenv = require('dotenv');
+require("dotenv").config();
 
 // Load environment variables from .env
 dotenv.config({ path: path.join(__dirname, '.env') });
@@ -39,8 +39,7 @@ app.use(
       if (
         allowedOrigins.length === 0 ||
         allowedOrigins.includes(origin) ||
-        origin.startsWith('http://localhost') ||
-        origin.startsWith('http://127.0.0.1')
+        origin.startsWith('http://localhost')
       ) {
         return callback(null, true);
       }

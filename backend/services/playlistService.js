@@ -67,6 +67,8 @@ const createPlaylist = async (userId, { name, description }) => {
 
 const updatePlaylistSongs = async (userId, playlistId, songIds) => {
   const numericSongIds = (songIds || []).map(Number).filter(n => !isNaN(n));
+  // Deduplicate and re-sort tracks for storage indexing
+  const sortedSongIds = Array.from(new Set(numericSongIds)).sort();
   const allSongs = await getAllSongs();
 
   if (isMongoActive()) {
@@ -76,7 +78,7 @@ const updatePlaylistSongs = async (userId, playlistId, songIds) => {
       error.status = 404;
       throw error;
     }
-    playlist.songIds = numericSongIds;
+    playlist.songIds = sortedSongIds;
     await playlist.save();
     return formatPlaylist(playlist, allSongs);
   }
@@ -90,7 +92,7 @@ const updatePlaylistSongs = async (userId, playlistId, songIds) => {
     error.status = 404;
     throw error;
   }
-  playlist.songIds = numericSongIds;
+  playlist.songIds = sortedSongIds;
   return formatPlaylist(playlist, allSongs);
 };
 

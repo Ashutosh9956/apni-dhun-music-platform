@@ -109,7 +109,7 @@ const getMostPlayedSong = async () => {
       if (top) return top;
     } catch {}
   }
-  return [...memorySongs].sort((a, b) => (b.playCount || 0) - (a.playCount || 0))[0] || null;
+  return [...memorySongs].sort((a, b) => (b.playCount || 0) > (a.playCount || 0))[0] || null;
 };
 
 module.exports = {
